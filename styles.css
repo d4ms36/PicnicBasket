@@ -416,6 +416,9 @@ h1, h2 {
     background: var(--pine-deep);
     box-shadow: 0 -8px 24px rgba(34, 48, 40, 0.3);
   }
+  .mobile-actions {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
   .mobile-actions a {
     padding: 1rem 0.5rem;
     text-align: center;
@@ -424,7 +427,11 @@ h1, h2 {
     font-size: 0.9rem;
   }
   .mobile-actions a + a { border-left: 1px solid rgba(250, 245, 234, 0.18); }
-  .site-footer { padding-bottom: 5.5rem; }
+  .mobile-actions a:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: -2px;
+  }
+  .site-footer { padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0)); }
 }
 
 /* ---------- Social ---------- */
