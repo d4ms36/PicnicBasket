@@ -362,6 +362,71 @@ h1, h2 {
 .visit-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; margin: 1.6rem 0 1.2rem; }
 .visit-meta { font-size: 0.9rem; color: rgba(43, 43, 38, 0.65); }
 
+.hours-table {
+  border-collapse: collapse;
+  margin: 0 0 1.2rem;
+  font-size: 0.95rem;
+}
+.hours-table td { padding: 0.4rem 1.4rem 0.4rem 0; }
+.hours-table td:first-child { font-weight: 700; color: var(--pine-deep); }
+
+/* ---------- Review themes ---------- */
+.saying { padding: 0 0 6rem; }
+
+.saying-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.saying-card {
+  background: #fff;
+  border: 1px solid rgba(46, 64, 52, 0.1);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.saying-card strong {
+  font-family: "Fraunces", serif;
+  font-size: 1.15rem;
+  color: var(--pine-deep);
+  line-height: 1.4;
+}
+
+.saying-card span { font-size: 0.9rem; color: rgba(43, 43, 38, 0.7); line-height: 1.6; }
+
+.saying-cta { margin-top: 1.8rem; }
+
+/* ---------- Mobile sticky action bar ---------- */
+.mobile-actions { display: none; }
+
+@media (max-width: 640px) {
+  .mobile-actions {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: var(--pine-deep);
+    box-shadow: 0 -8px 24px rgba(34, 48, 40, 0.3);
+  }
+  .mobile-actions a {
+    padding: 1rem 0.5rem;
+    text-align: center;
+    color: var(--cream);
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+  .mobile-actions a + a { border-left: 1px solid rgba(250, 245, 234, 0.18); }
+  .site-footer { padding-bottom: 5.5rem; }
+}
+
 /* ---------- Social ---------- */
 .social { padding: 5rem 0 6rem; background: var(--sand); }
 

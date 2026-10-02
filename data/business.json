@@ -1,0 +1,70 @@
+{
+  "business": {
+    "name": "Picnic Basket",
+    "address": {
+      "street": "403 S Walker St",
+      "city": "Alpine",
+      "state": "TX",
+      "zip": "79830"
+    },
+    "phone": "+14325381770",
+    "phoneDisplay": "(432) 538-1770",
+    "instagram": "https://www.instagram.com/picnicbasketalpine/",
+    "instagramHandle": "@picnicbasketalpine",
+    "facebook": "https://www.facebook.com/p/Picnic-Basket-Alpine-100090701393716/",
+    "mapsDirections": "https://www.google.com/maps/dir/?api=1&destination=Picnic+Basket,+403+S+Walker+St,+Alpine,+TX+79830",
+    "description": "Sandwiches, wraps, salads and bento snack boxes — to go or dine in — plus a vintage gift shop with apparel, baskets and camping goods in Alpine, Texas.",
+    "hours": {
+      "note": "Verify with business before publishing",
+      "monday": "11 AM – 4 PM",
+      "tuesday": "11 AM – 4 PM",
+      "wednesday": "Closed",
+      "thursday": "Closed",
+      "friday": "11 AM – 4 PM",
+      "saturday": "11 AM – 4 PM",
+      "sunday": "11 AM – 4 PM"
+    },
+    "food": [
+      "Brisket quesadilla",
+      "Chicken quesadilla",
+      "Chicken wrap",
+      "Rotisserie chicken",
+      "Vegan salad",
+      "Vegan wrap",
+      "Hummus plates",
+      "Sandwiches",
+      "Salads",
+      "Bento snack boxes"
+    ],
+    "gifts": [
+      "Vintage souvenirs",
+      "Greeting cards",
+      "Big Bend postcards",
+      "Baskets",
+      "Made in Boquillas, México"
+    ],
+    "apparel": ["Vintage clothing"],
+    "outdoor": ["Camping goods", "Outdoor seating"],
+    "amenities": [
+      "Dine in",
+      "Takeout",
+      "Grab-and-go",
+      "Outdoor seating",
+      "Vegan options",
+      "Kid-friendly",
+      "High chairs",
+      "Wheelchair accessible"
+    ],
+    "images": {
+      "hero": "public/images/picnic-basket/alpine/big-bend-desert.jpg",
+      "foodMain": "public/images/picnic-basket/food/quesadilla.jpg",
+      "foodSandwich": "public/images/picnic-basket/food/sandwich.jpg",
+      "foodSalad": "public/images/picnic-basket/food/salad.jpg",
+      "foodBento": "public/images/picnic-basket/food/bento.jpg",
+      "giftShop": "public/images/picnic-basket/gifts/gift-shop.jpg",
+      "outdoor": "public/images/picnic-basket/outdoor/outdoor-products.jpg",
+      "storefront": "public/images/picnic-basket/store/storefront.jpg"
+    },
+    "videos": []
+  }
+}
