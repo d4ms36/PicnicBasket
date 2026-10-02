@@ -1,0 +1,428 @@
+/* Picnic Basket — Alpine, TX
+   Art direction from verified research: vintage gift-shop warmth, West Texas desert tones,
+   homemade café food. Palette: desert sand, sage, adobe clay, deep pine. */
+
+:root {
+  --pine: #2e4034;
+  --pine-deep: #223028;
+  --sage: #a9b891;
+  --sand: #f2e8d5;
+  --cream: #faf5ea;
+  --clay: #c26d4b;
+  --gold: #d9a441;
+  --ink: #2b2b26;
+  --shadow: 0 18px 40px rgba(34, 48, 40, 0.14);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+a { color: inherit; text-decoration: none; }
+
+.container { width: min(1160px, calc(100% - 2.5rem)); margin: 0 auto; }
+
+h1, h2 {
+  font-family: "Fraunces", serif;
+  letter-spacing: -0.02em;
+  color: var(--pine-deep);
+  margin: 0;
+}
+
+.eyebrow {
+  margin: 0 0 0.9rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--clay);
+}
+
+.eyebrow.light { color: var(--gold); }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: rgba(250, 245, 234, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(46, 64, 52, 0.1);
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 76px;
+}
+
+.brand { display: inline-flex; align-items: center; gap: 0.75rem; }
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--pine);
+  color: var(--sand);
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+}
+
+.brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+.brand-text strong { font-family: "Fraunces", serif; font-size: 1.05rem; }
+.brand-text small {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(43, 43, 38, 0.65);
+}
+
+.main-nav { display: flex; gap: 1.8rem; font-weight: 600; font-size: 0.95rem; }
+.main-nav a:hover { color: var(--clay); }
+
+.header-cta {
+  padding: 0.7rem 1.1rem;
+  border-radius: 999px;
+  background: var(--pine);
+  color: var(--cream);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.nav-toggle { display: none; background: none; border: 0; width: 44px; height: 44px; cursor: pointer; }
+.nav-toggle span { display: block; width: 22px; height: 2px; background: var(--pine); margin: 5px auto; border-radius: 2px; }
+
+/* ---------- Buttons ---------- */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.button:hover { transform: translateY(-2px); }
+.button.primary { background: var(--clay); color: #fff; box-shadow: 0 12px 26px rgba(194, 109, 75, 0.35); }
+.button.secondary { background: transparent; border: 2px solid var(--pine); color: var(--pine); }
+.button.ghost { background: rgba(250, 245, 234, 0.16); border: 1px solid rgba(250, 245, 234, 0.5); color: var(--cream); }
+
+.text-link { font-weight: 700; color: var(--clay); }
+
+/* ---------- Placeholder system (swap with real assets — see ASSETS.md) ---------- */
+.ph { position: relative; overflow: hidden; background-color: var(--sand); }
+.ph::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 78% 18%, rgba(217, 164, 65, 0.35), transparent 42%),
+    radial-gradient(circle at 18% 82%, rgba(169, 184, 145, 0.4), transparent 46%);
+  pointer-events: none;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: var(--cream);
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(34, 48, 40, 0.25) 0%, rgba(34, 48, 40, 0.78) 78%),
+    url("public/images/picnic-basket/alpine/big-bend-desert.jpg") center/cover no-repeat;
+}
+/* Ambient photo: West Texas / Big Bend desert road (Unsplash, free license).
+   Replace with real storefront photo when owner provides it. */
+
+.hero-inner { position: relative; padding: 6rem 0 4rem; max-width: 1160px; }
+
+.hero h1 {
+  color: var(--cream);
+  font-size: clamp(2.6rem, 5.4vw, 4.6rem);
+  line-height: 1.02;
+  max-width: 15ch;
+}
+
+.hero .lede {
+  max-width: 46ch;
+  margin: 1.4rem 0 0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(250, 245, 234, 0.88);
+}
+
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: 2rem; }
+
+.hero-strip {
+  position: relative;
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  padding: 1.1rem 0;
+  border-top: 1px solid rgba(250, 245, 234, 0.25);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(250, 245, 234, 0.75);
+  scrollbar-width: none;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.hero-strip::-webkit-scrollbar { display: none; }
+
+/* ---------- Sections ---------- */
+.section-head { max-width: 640px; margin-bottom: 2.6rem; }
+.section-head h2 { font-size: clamp(2rem, 3.6vw, 3rem); line-height: 1.08; }
+.section-sub { margin-top: 1rem; line-height: 1.75; color: rgba(43, 43, 38, 0.75); }
+
+.eat { padding: 6rem 0; }
+
+.eat-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 1fr;
+  grid-auto-rows: 220px;
+  gap: 1.2rem;
+}
+
+.eat-main {
+  grid-row: span 2;
+  margin: 0;
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, transparent 45%, rgba(34, 48, 40, 0.72) 100%),
+    url("public/images/picnic-basket/food/quesadilla.jpg") center/cover no-repeat;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: flex-end;
+}
+
+.eat-card {
+  margin: 0;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: flex-end;
+}
+.ph-food-1 {
+  background:
+    linear-gradient(180deg, transparent 45%, rgba(34, 48, 40, 0.72) 100%),
+    url("public/images/picnic-basket/food/sandwich.jpg") center/cover no-repeat;
+}
+.ph-food-2 {
+  background:
+    linear-gradient(180deg, transparent 45%, rgba(34, 48, 40, 0.72) 100%),
+    url("public/images/picnic-basket/food/salad.jpg") center/cover no-repeat;
+}
+.ph-food-3 {
+  background:
+    linear-gradient(180deg, transparent 45%, rgba(34, 48, 40, 0.72) 100%),
+    url("public/images/picnic-basket/food/bento.jpg") center/cover no-repeat;
+}
+
+.eat-main figcaption, .eat-card figcaption {
+  position: relative;
+  z-index: 1;
+  padding: 1.2rem 1.3rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 1.05rem;
+}
+
+.tag {
+  align-self: flex-start;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.22);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.eat-note {
+  grid-column: 2 / 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.4rem 1.6rem;
+  border-radius: 20px;
+  background: #fff;
+  border: 1px solid rgba(46, 64, 52, 0.1);
+}
+.eat-note p { margin: 0; line-height: 1.7; color: rgba(43, 43, 38, 0.78); }
+
+/* ---------- Shop ---------- */
+.shop { padding: 6rem 0; background: var(--sand); }
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.shop-copy h2 { font-size: clamp(2rem, 3.6vw, 3rem); }
+.shop-copy p { line-height: 1.8; color: rgba(43, 43, 38, 0.78); }
+
+.shop-list { list-style: none; margin: 1.6rem 0 0; padding: 0; display: grid; gap: 0.7rem; }
+.shop-list li { padding-left: 1.6rem; position: relative; font-weight: 600; }
+.shop-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.45em;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: var(--clay);
+}
+
+.shop-wall {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 190px;
+  gap: 1rem;
+}
+
+.wall-item { border-radius: 18px; box-shadow: var(--shadow); background-size: cover; background-position: center; }
+.ph-gift-1 { background-image: url("public/images/picnic-basket/gifts/gift-shop.jpg"); }
+.ph-gift-2 { background-image: url("public/images/picnic-basket/gifts/gift-shop.jpg"); background-position: top; grid-row: span 2; }
+.ph-gift-3 { background-image: url("public/images/picnic-basket/food/bento.jpg"); }
+.ph-gift-4 { background-image: url("public/images/picnic-basket/outdoor/outdoor-products.jpg"); }
+
+/* ---------- Explore ---------- */
+.explore {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  color: var(--cream);
+}
+
+.explore-media {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(34, 48, 40, 0.82) 0%, rgba(34, 48, 40, 0.35) 60%, rgba(34, 48, 40, 0.15) 100%),
+    url("public/images/picnic-basket/outdoor/outdoor-products.jpg") center/cover no-repeat;
+}
+
+.explore-inner { position: relative; padding: 5rem 0; max-width: 1160px; }
+.explore h2 { color: var(--cream); font-size: clamp(2.2rem, 4vw, 3.4rem); max-width: 14ch; }
+.explore p { max-width: 44ch; line-height: 1.75; color: rgba(250, 245, 234, 0.88); margin: 1.2rem 0 1.8rem; }
+
+/* ---------- Visit ---------- */
+.visit { padding: 6rem 0; }
+
+.visit-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.visit-photo {
+  min-height: 460px;
+  border-radius: 26px;
+  background: url("public/images/picnic-basket/store/storefront.jpg") center/cover no-repeat;
+  box-shadow: var(--shadow);
+}
+
+.visit-info h2 { font-size: clamp(2.2rem, 4vw, 3.2rem); }
+.visit-info address {
+  font-style: normal;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin: 1.4rem 0 0.4rem;
+  font-weight: 600;
+}
+.visit-phone a { font-size: 1.25rem; font-weight: 700; color: var(--clay); }
+.visit-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; margin: 1.6rem 0 1.2rem; }
+.visit-meta { font-size: 0.9rem; color: rgba(43, 43, 38, 0.65); }
+
+/* ---------- Social ---------- */
+.social { padding: 5rem 0 6rem; background: var(--sand); }
+
+.social-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.9rem;
+}
+
+.social-tile { aspect-ratio: 1; border-radius: 16px; box-shadow: var(--shadow); background-size: cover; background-position: center; }
+.ph-social-1 { background-image: url("public/images/picnic-basket/food/quesadilla.jpg"); }
+.ph-social-2 { background-image: url("public/images/picnic-basket/alpine/big-bend-desert.jpg"); }
+.ph-social-3 { background-image: url("public/images/picnic-basket/food/sandwich.jpg"); }
+.ph-social-4 { background-image: url("public/images/picnic-basket/gifts/gift-shop.jpg"); }
+.ph-social-5 { background-image: url("public/images/picnic-basket/outdoor/outdoor-products.jpg"); }
+.ph-social-6 { background-image: url("public/images/picnic-basket/food/salad.jpg"); }
+
+.social-cta { display: flex; justify-content: center; margin-top: 2.2rem; }
+
+/* ---------- Footer ---------- */
+.site-footer { background: var(--pine-deep); color: rgba(250, 245, 234, 0.85); padding: 2.4rem 0; }
+.footer-wrap { display: flex; justify-content: space-between; align-items: center; gap: 1.4rem; flex-wrap: wrap; }
+.site-footer strong { font-family: "Fraunces", serif; font-size: 1.3rem; color: var(--cream); }
+.site-footer p { margin: 0.4rem 0 0; font-size: 0.9rem; }
+.footer-links { display: flex; gap: 1.4rem; font-weight: 600; }
+.footer-links a:hover { color: var(--gold); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .eat-grid { grid-template-columns: 1fr 1fr; }
+  .eat-main { grid-column: 1 / -1; grid-row: auto; min-height: 320px; }
+  .eat-note { grid-column: 1 / -1; }
+  .shop-grid, .visit-grid { grid-template-columns: 1fr; }
+  .social-row { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .nav-toggle { display: block; }
+  .header-cta { display: none; }
+  .main-nav {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 1rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    padding: 1rem 1.2rem;
+    background: var(--cream);
+    border: 1px solid rgba(46, 64, 52, 0.12);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+  }
+  .main-nav.is-open { display: flex; }
+  .hero { min-height: 78vh; }
+  .eat-grid { grid-template-columns: 1fr; grid-auto-rows: 200px; }
+  .social-row {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 0.5rem;
+  }
+  .social-tile { flex: 0 0 62%; scroll-snap-align: start; }
+  .visit-photo { min-height: 320px; }
+}
